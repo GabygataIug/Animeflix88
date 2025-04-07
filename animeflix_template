@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnimeFlix</title>
+  <style>
+    :root {
+      --primary: #E50914;
+      --dark: #121212;
+      --dark-secondary: #1E1E1E;
+      --text: #FFFFFF;
+      --text-secondary: #AAAAAA;
+    }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: var(--dark-secondary);
+      padding: 15px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .menu a {
+      color: var(--text);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .search-bar input {
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: none;
+      background: #333;
+      color: white;
+    }
+
+    .featured {
+      background: url('https://upload.wikimedia.org/wikipedia/pt/9/94/Naruto_Uzumaki.png') center center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+      position: relative;
+    }
+
+    .featured::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      top: 0;
+      left: 0;
+    }
+
+    .featured-info {
+      position: relative;
+      z-index: 1;
+    }
+
+    .featured-info h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    .featured-info p {
+      max-width: 600px;
+      color: var(--text-secondary);
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .catalog {
+      padding: 30px 5%;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--primary);
+      padding-left: 10px;
+    }
+
+    .anime-list {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding-bottom: 20px;
+    }
+
+    .anime-card {
+      background: var(--dark-secondary);
+      border-radius: 8px;
+      min-width: 200px;
+      transition: transform 0.3s;
+    }
+
+    .anime-card:hover {
+      transform: scale(1.05);
+    }
+
+    .anime-card img {
+      width: 100%;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .anime-info {
+      padding: 10px;
+    }
+
+    .anime-info h3 {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    .anime-info p {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    footer {
+      background: var(--dark-secondary);
+      padding: 20px 5%;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+      }
+      .featured-info h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">ANIMEFLIX</div>
+    <nav class="menu">
+      <a href="#">Início</a>
+      <a href="#">Animes</a>
+      <a href="#">Filmes</a>
+      <a href="#">Lista</a>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar animes..." />
+    </div>
+  </header>
+
+  <!-- Destaque Naruto -->
+  <section class="featured">
+    <div class="featured-info">
+      <h1>Naruto Shippuden</h1>
+      <p>Acompanhe a jornada ninja de Naruto em sua missão para proteger a vila e encontrar seu amigo Sasuke.</p>
+      <a class="btn" href="https://seusite.com/naruto" target="_blank">Assistir Agora</a>
+    </div>
+  </section>
+
+  <!-- Catálogo Populares -->
+  <section class="catalog">
+    <h2 class="section-title">Populares</h2>
+    <div class="anime-list">
+      <a href="https://seusite.com/naruto" target="_blank">
+        <div class="anime-card">
+          <img src="https://upload.wikimedia.org/wikipedia/pt/9/94/Naruto_Uzumaki.png" alt="Naruto Shippuden" />
+          <div class="anime-info">
+            <h3>Naruto Shippuden</h3>
+            <p>500 episódios</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">Termos de Uso</a>
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Contato</a>
+    </div>
+    <p>© 2025 AnimeFlix - Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
